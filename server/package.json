@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@paypal/agent-toolkit": "1.11.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "description": "Act 3 of the PayPal AI Hackathon demo: Curator's agent pays an invoice for real in the PayPal sandbox, via the PayPal Agent Toolkit.",
+  "engines": {
+    "node": ">=18"
+  },
+  "name": "paypal-curator-server",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "type": "module",
+  "version": "0.1.0"
+}

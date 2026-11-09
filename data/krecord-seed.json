@@ -1,0 +1,197 @@
+{
+  "entries": [
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-12",
+      "kind": "catalog",
+      "seq": 1,
+      "text": "First run: catalogued the messy folder into subjects by what each file is about.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-12",
+      "kind": "permission",
+      "seq": 2,
+      "text": "Granted read-only access to the pool folder. It can look, it cannot change or delete anything.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-13",
+      "kind": "belief",
+      "seq": 3,
+      "source": {
+        "fileId": "inv-1041",
+        "fileName": "invoice-1041.txt",
+        "pointer": "line 2"
+      },
+      "text": "Believed invoice INV-1041 belongs to Acme Supplies.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-15",
+      "kind": "permission",
+      "seq": 4,
+      "text": "Granted permission to read the invoices folder and match invoices to payees.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-15",
+      "kind": "authority",
+      "seq": 5,
+      "text": "Trust level set to 0.9 after 5 correct invoice matches in a row.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-18",
+      "kind": "belief",
+      "seq": 6,
+      "source": {
+        "fileId": "inv-1041",
+        "fileName": "invoice-1041.txt",
+        "pointer": "line 2"
+      },
+      "text": "Believed Acme Supplies is the most frequent payee in the pool.",
+      "trust": 0.8
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-21",
+      "kind": "belief",
+      "seq": 7,
+      "source": {
+        "fileId": "inv-1041",
+        "fileName": "invoice-1041.txt",
+        "pointer": "line 4"
+      },
+      "text": "Found the mistake: invoice INV-1041 does not belong to Acme Supplies. It belongs to Beta Office.",
+      "trust": 0.7
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-21",
+      "kind": "authority",
+      "seq": 8,
+      "text": "Trust dropped from 0.9 to 0.6 after the wrong invoice match on INV-1041.",
+      "trust": 0.6
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-21",
+      "kind": "permission",
+      "seq": 9,
+      "text": "Permission narrowed: the agent may no longer match an invoice to a payee on its own. Every match needs a second check first.",
+      "trust": 0.6
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-24",
+      "kind": "authority",
+      "seq": 10,
+      "text": "Trust partly restored to 0.75 after 3 correct matches with the second check in place.",
+      "trust": 0.75
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-24",
+      "kind": "belief",
+      "seq": 11,
+      "source": {
+        "fileId": "inv-1041",
+        "fileName": "invoice-1041.txt",
+        "pointer": "line 4"
+      },
+      "text": "Believed invoice INV-1041 belongs to Beta Office, not Acme Supplies. The old belief from Oct 13 stays in this record — it was wrong, and the record shows it.",
+      "trust": 0.7
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-27",
+      "kind": "permission",
+      "seq": 12,
+      "text": "Granted permission to write short report summaries from facts that have a source. It may not write anything it cannot point back to a file.",
+      "trust": 0.75
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-10-30",
+      "kind": "belief",
+      "seq": 13,
+      "source": {
+        "fileId": "chat-1028",
+        "fileName": "chat-2026-10-28.txt",
+        "pointer": "message 3"
+      },
+      "text": "Believed the chat log from Oct 28 is about the Acme order, not the Beta order.",
+      "trust": 0.8
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-02",
+      "kind": "authority",
+      "seq": 14,
+      "text": "Trust restored to 0.9 after a full week of correct matches with no errors.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-02",
+      "kind": "permission",
+      "seq": 15,
+      "text": "Permission restored: the agent may match invoices to payees on its own again, with the second check kept on for invoices over $500.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-05",
+      "kind": "permission",
+      "seq": 16,
+      "text": "Permission narrowed for payments: the agent may draft a payment, but it may not send one. Sending needs a human.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-07",
+      "kind": "belief",
+      "seq": 17,
+      "text": "Believed Beta Office is now the most frequent payee, after the INV-1041 correction.",
+      "trust": 0.8
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-07",
+      "kind": "catalog",
+      "seq": 18,
+      "text": "Re-catalogued the pool after the correction. Two files moved to a different subject.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-09",
+      "kind": "authority",
+      "seq": 19,
+      "text": "Trust holding at 0.9. No errors since the Oct 21 correction.",
+      "trust": 0.9
+    },
+    {
+      "actor": "curator-agent",
+      "date": "2026-11-09",
+      "kind": "payment",
+      "seq": 20,
+      "source": {
+        "fileId": "inv-1041",
+        "fileName": "invoice-1041.txt",
+        "pointer": "line 3"
+      },
+      "text": "PLACEHOLDER — no real money moved. Example of what a payment entry looks like: $42.00 drafted for Acme Supplies, invoice INV-1041, waiting for a human to send it. Act 3 appends the live payment entry here.",
+      "trust": 1
+    }
+  ],
+  "mock": true,
+  "note": "SEEDED MOCK DATA for the PayPal AI Hackathon demo. No real agent, no real permissions, no real money. The payment entry (seq 20) is a labelled placeholder showing the shape — the real payment entry is appended live in Act 3 by the payment code calling appendEntry. Old entries are never edited: when the agent was wrong, the correction is a new entry and the wrong belief stays in the log.",
+  "version": 1
+}

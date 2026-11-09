@@ -1,0 +1,243 @@
+{
+  "_note": "SEEDED MOCK DATA for the PayPal Curator hackathon demo. Every file is invented, every person, business and amount is fictional, and nothing here is real. Do not present this data as genuine records.",
+  "files": [
+    {
+      "id": "f01",
+      "name": "chatgpt-export.json",
+      "kind": "chat-export",
+      "path": "data/pool/chatgpt-export.json",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "f02",
+      "name": "invoice-0041.txt",
+      "kind": "invoice",
+      "path": "data/pool/invoice-0041.txt",
+      "date": "2026-10-28"
+    },
+    {
+      "id": "f03",
+      "name": "invoice-0042.txt",
+      "kind": "invoice",
+      "path": "data/pool/invoice-0042.txt",
+      "date": "2026-10-30"
+    },
+    {
+      "id": "f04",
+      "name": "invoice-0043.txt",
+      "kind": "invoice",
+      "path": "data/pool/invoice-0043.txt",
+      "date": "2026-11-02"
+    },
+    {
+      "id": "f05",
+      "name": "invoice-0044.txt",
+      "kind": "invoice",
+      "path": "data/pool/invoice-0044.txt",
+      "date": "2026-11-05"
+    },
+    {
+      "id": "f06",
+      "name": "chat-001.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-001.txt",
+      "date": "2026-10-14"
+    },
+    {
+      "id": "f07",
+      "name": "chat-002.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-002.txt",
+      "date": "2026-10-19"
+    },
+    {
+      "id": "f08",
+      "name": "chat-003.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-003.txt",
+      "date": "2026-10-24"
+    },
+    {
+      "id": "f09",
+      "name": "chat-004.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-004.txt",
+      "date": "2026-11-03"
+    },
+    {
+      "id": "f10",
+      "name": "chat-005.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-005.txt",
+      "date": "2026-11-06"
+    },
+    {
+      "id": "f11",
+      "name": "chat-006.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-006.txt",
+      "date": "2026-10-12"
+    },
+    {
+      "id": "f12",
+      "name": "chat-007.txt",
+      "kind": "chat-log",
+      "path": "data/pool/chat-007.txt",
+      "date": "2026-11-08"
+    },
+    {
+      "id": "f13",
+      "name": "email-draft.txt",
+      "kind": "chat-log",
+      "path": "data/pool/email-draft.txt",
+      "date": "2026-10-29"
+    },
+    {
+      "id": "f14",
+      "name": "supplier-email.txt",
+      "kind": "chat-log",
+      "path": "data/pool/supplier-email.txt",
+      "date": "2026-11-07"
+    },
+    {
+      "id": "f15",
+      "name": "client-anna.txt",
+      "kind": "chat-log",
+      "path": "data/pool/client-anna.txt",
+      "date": "2026-10-26"
+    },
+    {
+      "id": "f16",
+      "name": "IMG_2041.txt",
+      "kind": "note",
+      "path": "data/pool/IMG_2041.txt",
+      "date": "2026-10-15"
+    },
+    {
+      "id": "f17",
+      "name": "final_v2_REAL.pdf.txt",
+      "kind": "doc",
+      "path": "data/pool/final_v2_REAL.pdf.txt",
+      "date": "2026-10-21"
+    },
+    {
+      "id": "f18",
+      "name": "notes-untitled-3.md",
+      "kind": "note",
+      "path": "data/pool/notes-untitled-3.md",
+      "date": "2026-10-16"
+    },
+    {
+      "id": "f19",
+      "name": "copy of copy - menu.txt",
+      "kind": "doc",
+      "path": "data/pool/copy of copy - menu.txt",
+      "date": "2026-10-18"
+    },
+    {
+      "id": "f20",
+      "name": "scan003.txt",
+      "kind": "doc",
+      "path": "data/pool/scan003.txt",
+      "date": "2026-10-22"
+    },
+    {
+      "id": "f21",
+      "name": "new doc.txt",
+      "kind": "note",
+      "path": "data/pool/new doc.txt",
+      "date": "2026-10-13"
+    },
+    {
+      "id": "f22",
+      "name": "meeting-notes-oct.md",
+      "kind": "note",
+      "path": "data/pool/meeting-notes-oct.md",
+      "date": "2026-10-20"
+    },
+    {
+      "id": "f23",
+      "name": "todo-final-FINAL.txt",
+      "kind": "note",
+      "path": "data/pool/todo-final-FINAL.txt",
+      "date": "2026-11-04"
+    },
+    {
+      "id": "f24",
+      "name": "roof-photos-list.txt",
+      "kind": "doc",
+      "path": "data/pool/roof-photos-list.txt",
+      "date": "2026-10-17"
+    },
+    {
+      "id": "f25",
+      "name": "menu-ideas.md",
+      "kind": "note",
+      "path": "data/pool/menu-ideas.md",
+      "date": "2026-10-23"
+    },
+    {
+      "id": "f26",
+      "name": "contract-v3.txt",
+      "kind": "doc",
+      "path": "data/pool/contract-v3.txt",
+      "date": "2026-11-06"
+    },
+    {
+      "id": "f27",
+      "name": "reminder.txt",
+      "kind": "note",
+      "path": "data/pool/reminder.txt",
+      "date": "2026-10-31"
+    },
+    {
+      "id": "f28",
+      "name": "receipt-paid.txt",
+      "kind": "note",
+      "path": "data/pool/receipt-paid.txt",
+      "date": "2026-10-12"
+    },
+    {
+      "id": "f29",
+      "name": "budget-scribble.txt",
+      "kind": "note",
+      "path": "data/pool/budget-scribble.txt",
+      "date": "2026-11-09"
+    },
+    {
+      "id": "f30",
+      "name": "stuff.txt",
+      "kind": "note",
+      "path": "data/pool/stuff.txt",
+      "date": "2026-10-27"
+    },
+    {
+      "id": "f31",
+      "name": "untitled (1).txt",
+      "kind": "note",
+      "path": "data/pool/untitled (1).txt",
+      "date": "2026-11-01"
+    },
+    {
+      "id": "f32",
+      "name": "asdf.txt",
+      "kind": "note",
+      "path": "data/pool/asdf.txt",
+      "date": "2026-11-08"
+    },
+    {
+      "id": "f33",
+      "name": "lyrics-draft.txt",
+      "kind": "note",
+      "path": "data/pool/lyrics-draft.txt",
+      "date": "2026-11-05"
+    },
+    {
+      "id": "f34",
+      "name": "wifi-passwords.txt",
+      "kind": "note",
+      "path": "data/pool/wifi-passwords.txt",
+      "date": "2026-10-25"
+    }
+  ]
+}

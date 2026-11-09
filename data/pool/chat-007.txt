@@ -1,0 +1,7 @@
+WhatsApp - Anna (client)
+Nov 8, 2026
+Anna: hi Sally, can we move our catering booking from Friday to Saturday?
+Sally: of course, Saturday works. Same menu, 30 guests?
+Anna: yes same menu, 30 guests, delivery 12pm instead of 11am
+Sally: done, moved to Saturday 12pm. See you then!
+Anna: thank you, you're a star

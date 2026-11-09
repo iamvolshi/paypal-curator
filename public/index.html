@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Curator — messy folder in, organised folder out, money paid, receipt kept</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="wrap">
+  <p class="kicker">PayPal AI Hackathon 2026 &middot; Curator + PayPal agentic commerce</p>
+  <h1>Curator</h1>
+  <p class="lede">A messy folder goes in. An organised folder comes out.
+    An invoice gets paid. And the receipt stays on the record forever.</p>
+  <p class="banner"><strong>SEEDED MOCK DATA.</strong> Every person, business,
+    invoice and amount on this page is invented for the demo. Nothing here is
+    real — except the PayPal sandbox payment in Act 3, which moves fake money
+    between sandbox accounts.</p>
+  <nav class="steps" aria-label="The four acts">
+    <a href="#act1" data-step="1"><span>1</span> SNAP ON</a>
+    <a href="#act2" data-step="2"><span>2</span> RETRIEVE</a>
+    <a href="#act3" data-step="3"><span>3</span> PAY</a>
+    <a href="#act4" data-step="4"><span>4</span> AUDIT</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="act" id="act1">
+    <h2><span class="num">1</span> SNAP ON</h2>
+    <p class="plain">Curator snaps onto a messy folder and sorts it by what
+      each file is actually about — never by its filename.</p>
+    <button id="attach-btn" class="btn">Attach data pool</button>
+    <p id="act1-status" class="status" role="status"></p>
+    <div id="subjects" class="cards"></div>
+    <div id="unfiled"></div>
+  </section>
+
+  <section class="act" id="act2">
+    <h2><span class="num">2</span> RETRIEVE</h2>
+    <p class="plain">Click a subject. Every fact Curator states points back
+      at the exact file, line or message it came from. Click a pointer to see
+      the source. If it cannot point at a source, it says so — it never guesses.</p>
+    <p id="act2-hint" class="status">Attach the data pool in Act 1 first, then pick a subject.</p>
+    <div id="report"></div>
+    <div id="source-viewer" class="source-viewer" hidden></div>
+  </section>
+
+  <section class="act" id="act3">
+    <h2><span class="num">3</span> PAY</h2>
+    <p class="plain">The agent pays an invoice — for real, in the PayPal
+      sandbox. You approve it as the sandbox buyer, then the agent captures
+      it. No approval, no money moves. Ever.</p>
+    <p id="act3-status" class="status" role="status">Checking whether the PayPal sandbox is connected&hellip;</p>
+    <div id="invoice"></div>
+    <div id="payment"></div>
+  </section>
+
+  <section class="act" id="act4">
+    <h2><span class="num">4</span> AUDIT</h2>
+    <p class="plain">The K-record: everything the agent believed, was allowed
+      to do, was trusted with, and paid — by date. Old entries are never
+      edited. When it was wrong, the correction is a new entry, and the wrong
+      belief stays in the log.</p>
+    <div class="audit-controls">
+      <label>From <input type="date" id="audit-from" value="2026-10-26"></label>
+      <label>To <input type="date" id="audit-to" value="2026-10-28"></label>
+      <button id="audit-btn" class="btn">Run audit</button>
+    </div>
+    <p id="act4-status" class="status" role="status"></p>
+    <div id="audit"></div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p class="motto">The sheet changes. The notes never do.</p>
+  <p class="fine">Curator demo for the PayPal AI Hackathon 2026. Pool and
+    seed data are invented mock data. Payments run only against the PayPal
+    sandbox — never production, never real money.</p>
+</footer>
+
+<script src="js/catalog.js"></script>
+<script src="js/provenance.js"></script>
+<script src="js/krecord.js"></script>
+<script src="js/views.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

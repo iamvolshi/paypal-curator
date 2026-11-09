@@ -1,0 +1,243 @@
+{
+  "exported_from": "ChatGPT",
+  "export_date": "2026-11-07",
+  "note": "Seeded mock data for the demo. Invented conversations, not real chats.",
+  "conversations": [
+    {
+      "title": "Catering menu for the library fundraiser",
+      "messages": [
+        {
+          "id": "msg-001",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "user",
+          "text": "I need a catering menu for 60 people, library fundraiser, budget is tight"
+        },
+        {
+          "id": "msg-002",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "assistant",
+          "text": "A buffet works best for 60 on a tight budget: sandwich platters, a hot pasta tray, salad, and lemonade."
+        },
+        {
+          "id": "msg-003",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "user",
+          "text": "How many sandwich platters for 60 guests?"
+        },
+        {
+          "id": "msg-004",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "assistant",
+          "text": "Plan on 3 large sandwich platters, about 90 pieces total, plus one vegetarian platter."
+        },
+        {
+          "id": "msg-005",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "user",
+          "text": "Can we add a dessert table? Brownies and fruit?"
+        },
+        {
+          "id": "msg-006",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "assistant",
+          "text": "Yes, brownies are cheap per head. A fruit tray adds colour and covers dietary needs."
+        },
+        {
+          "id": "msg-007",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "user",
+          "text": "What about coffee service for the evening?"
+        },
+        {
+          "id": "msg-008",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "assistant",
+          "text": "One urn for 60 covers it. Add decaf if the event runs past 8pm."
+        },
+        {
+          "id": "msg-009",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "user",
+          "text": "Okay, send me the final menu and the price per head"
+        },
+        {
+          "id": "msg-010",
+          "conversation": "Catering menu for the library fundraiser",
+          "role": "assistant",
+          "text": "Sandwich platters, pasta tray, salad, brownies, fruit, coffee: about $11 per head, $660 total."
+        }
+      ]
+    },
+    {
+      "title": "Roof leak over the kitchen",
+      "messages": [
+        {
+          "id": "msg-011",
+          "conversation": "Roof leak over the kitchen",
+          "role": "user",
+          "text": "There's a leak in the roof right above the kitchen, water coming through the ceiling"
+        },
+        {
+          "id": "msg-012",
+          "conversation": "Roof leak over the kitchen",
+          "role": "assistant",
+          "text": "Put a bucket under it and move anything electric away. Call a roofer before the next rain."
+        },
+        {
+          "id": "msg-013",
+          "conversation": "Roof leak over the kitchen",
+          "role": "user",
+          "text": "How do I know if the ceiling is going to collapse?"
+        },
+        {
+          "id": "msg-014",
+          "conversation": "Roof leak over the kitchen",
+          "role": "assistant",
+          "text": "If the plaster is sagging or bulging, stay out from under it. A small drip is usually a cracked tile or failed flashing."
+        },
+        {
+          "id": "msg-015",
+          "conversation": "Roof leak over the kitchen",
+          "role": "user",
+          "text": "The roofer said the flashing around the chimney is gone"
+        },
+        {
+          "id": "msg-016",
+          "conversation": "Roof leak over the kitchen",
+          "role": "assistant",
+          "text": "That matches a leak near a chimney. Replacing flashing and a few tiles should fix it."
+        },
+        {
+          "id": "msg-017",
+          "conversation": "Roof leak over the kitchen",
+          "role": "user",
+          "text": "He quoted me for the repair, is it worth getting a second quote?"
+        },
+        {
+          "id": "msg-018",
+          "conversation": "Roof leak over the kitchen",
+          "role": "assistant",
+          "text": "For a small flashing job, one trusted quote is fine. Get it in writing with the warranty."
+        },
+        {
+          "id": "msg-019",
+          "conversation": "Roof leak over the kitchen",
+          "role": "user",
+          "text": "What do I do about the damp patch on the wall?"
+        },
+        {
+          "id": "msg-020",
+          "conversation": "Roof leak over the kitchen",
+          "role": "assistant",
+          "text": "Let it dry fully after the repair, then repaint with a stain-blocking primer."
+        }
+      ]
+    },
+    {
+      "title": "Chasing an unpaid invoice",
+      "messages": [
+        {
+          "id": "msg-021",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "user",
+          "text": "A client hasn't paid their invoice and it's 3 weeks overdue, what do I say?"
+        },
+        {
+          "id": "msg-022",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "assistant",
+          "text": "Keep it short and friendly: restate the amount, the due date, and ask when you can expect payment."
+        },
+        {
+          "id": "msg-023",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "user",
+          "text": "Can you draft that email for me?"
+        },
+        {
+          "id": "msg-024",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "assistant",
+          "text": "Sure: 'Hi, just a quick note \u2014 invoice 0041 for $480 was due Nov 12. Could you let me know when payment is on its way? Thanks!'"
+        },
+        {
+          "id": "msg-025",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "user",
+          "text": "What if they still don't pay?"
+        },
+        {
+          "id": "msg-026",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "assistant",
+          "text": "Send one firmer reminder, then offer a payment plan or pause further work until the balance is settled."
+        },
+        {
+          "id": "msg-027",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "user",
+          "text": "How do I keep track of who owes what?"
+        },
+        {
+          "id": "msg-028",
+          "conversation": "Chasing an unpaid invoice",
+          "role": "assistant",
+          "text": "A simple sheet works: client, invoice number, amount, due date, paid or unpaid."
+        }
+      ]
+    },
+    {
+      "title": "Client unhappy about a late delivery",
+      "messages": [
+        {
+          "id": "msg-029",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "user",
+          "text": "A client says their catering order arrived 40 minutes late and the food was cold"
+        },
+        {
+          "id": "msg-030",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "assistant",
+          "text": "Apologise first, don't argue the clock. Offer a partial refund or a discount on the next order."
+        },
+        {
+          "id": "msg-031",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "user",
+          "text": "They want a full refund, is that fair?"
+        },
+        {
+          "id": "msg-032",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "assistant",
+          "text": "If the food was late and cold, a full refund of the delivery fee is fair; a full refund of the whole order is generous but ends the dispute."
+        },
+        {
+          "id": "msg-033",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "user",
+          "text": "How do I stop it happening again?"
+        },
+        {
+          "id": "msg-034",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "assistant",
+          "text": "Leave 30 minutes of buffer on every delivery and confirm the client's address the day before."
+        },
+        {
+          "id": "msg-035",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "user",
+          "text": "Draft me a reply to the client"
+        },
+        {
+          "id": "msg-036",
+          "conversation": "Client unhappy about a late delivery",
+          "role": "assistant",
+          "text": "'I'm really sorry the order arrived late and cold. That's not the standard we aim for. I'd like to refund the delivery fee and offer 10% off your next order.'"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+INVOICE 0044 - UNPAID
+From: Party Hire Ltd
+For: table linen rental for the library fundraiser (12 tablecloths)
+Amount due: $120
+Hire date: Nov 5, 2026
+Due date: Nov 19, 2026
+Status: UNPAID

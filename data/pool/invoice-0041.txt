@@ -1,0 +1,8 @@
+INVOICE 0041 - UNPAID
+From: M. Okafor (contractor)
+For: website fixes - booking page, broken links, mobile menu
+Amount due: $480
+Job marked complete: Oct 28, 2026
+Due date: Nov 12, 2026
+Status: UNPAID
+Please pay by bank transfer. Thank you.

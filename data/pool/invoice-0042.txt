@@ -1,0 +1,7 @@
+INVOICE 0042 - UNPAID
+From: D. Reyes Plumbing
+For: fixed burst pipe under the kitchen sink, new tap fitted
+Amount due: $210
+Job done: Oct 30, 2026
+Due date: Nov 14, 2026
+Status: UNPAID
