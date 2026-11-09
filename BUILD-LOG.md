@@ -77,8 +77,9 @@ Repo: iamvolshi/paypal-curator (public). Coordinator: Elara (subagent session).
   or a process wrapper for test runs. Stale test servers (PIDs 8567/8592/
   8714/8767) killed by coordinator.
 
-## 2026-11-09 ~18:52 — First push (commit 0a97214)
-- Pushed to iamvolshi/paypal-curator main. Working tree clean.
+## 2026-11-09 ~18:52 — First push (commit 5913082, after amend)
+- Pushed to iamvolshi/paypal-curator main. Working tree clean except the
+  held-back workflow file (untracked .github/).
 - HELD BACK: .github/workflows/pages.yml is NOT in the push — the iamvolshi
   token has no `workflow` scope, so GitHub refuses any push containing a
   workflow file ("refusing to allow an OAuth App to create or update
