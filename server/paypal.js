@@ -182,11 +182,13 @@ function isNotApproved(error) {
     error && error.code,
     error && error.details ? JSON.stringify(error.details) : '',
   ].join(' ');
-  return /ORDER_NOT_APPROVED|not approved/i.test(haystack);
+  return /ORDER_NOT_APPROVED|not (yet )?approved/i.test(haystack);
 }
 
 function approveUrlOf(order) {
-  const link = (order && order.links || []).find((l) => l && l.rel === 'approve');
+  const links = (order && order.links) || [];
+  const link = links.find((l) => l && l.rel === 'approve')
+    || links.find((l) => l && l.rel === 'payer-action');
   return (link && link.href) || null;
 }
 

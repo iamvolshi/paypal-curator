@@ -217,9 +217,34 @@ NOT verified from here (needs the coordinator / Darren):
   stopped after verification. The older ones were left alone.
 
 ## Open blockers
-- PayPal sandbox credentials: none available yet. Needed to test Act 3 end to end
-  and to record the video. Likely needs Darren (PayPal Developer Dashboard, free
-  sandbox app) or a sandbox app created for the demo.
+- PayPal sandbox credentials: DONE 2026-11-09 ~20:00 — Darren created the sandbox app + buyer account; live create → approve → capture verified (see section above). Keys live in server/.env only (gitignored).
 - Hosted demo URL: DECIDED in wave 2 — GitHub Pages for the static demo
   (Acts 1, 2, 4 + Act 3 honest not-connected state); Node backend still
   needs hosting for a live Act 3 (localhost for the video for now).
+
+## 2026-11-09 ~20:00 — Live sandbox test: create → approve → capture COMPLETED
+
+Darren created the sandbox app ("curator") + buyer account in the PayPal
+Developer Dashboard and handed over the sandbox keys. Server run with real
+creds in server/.env (gitignored, never committed).
+- Health: /api/health → paypal "sandbox". Token endpoint issued a real access token.
+- Two bugs found by the live test and fixed in server/paypal.js:
+  1. isNotApproved() only matched "not approved" — PayPal's real error says
+     "not yet approved", so the first /api/pay call came back 422 instead of
+     202 AWAITING_PAYER_APPROVAL and the order id was lost. Now matches
+     "not (yet )?approved".
+  2. approveUrlOf() only looked for rel "approve" — PayPal returns the
+     approval link as rel "payer-action", so approveUrl was null and the UI
+     would have thrown "Unexpected payment response". Now accepts "approve"
+     or "payer-action".
+- Full loop verified live: POST /api/pay INV-0041 $480 → 202
+  AWAITING_PAYER_APPROVAL, order 5D7227578P490643S → buyer approved in a
+  real browser (sandbox.paypal.com, buyer account) → POST
+  /api/pay/5D7227578P490643S/capture → 200 COMPLETED, capture
+  812073410Y427925S → K-record entry seq 21 ("Paid $480 ... for invoice
+  INV-0041"), trust 1.
+- Note: one orphan CREATED order from the pre-fix 422 (order id not returned
+  in the error response); sandbox-only, expires unapproved, no money moved,
+  no K-record entry.
+- Still to do: video (DEMO-SCRIPT.md), Devpost description + Join click,
+  hosted demo URL (Pages workflow still held back — token lacks workflow scope).
