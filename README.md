@@ -100,10 +100,8 @@ BUILD-LOG.md          build log, verified facts, open blockers
 
 ## Still missing for submission
 
-- **Video** (under 3 min) — script is in `DEMO-SCRIPT.md`; needs a live
-  sandbox payment recorded end to end, which needs sandbox credentials first.
+- **Video** (under 3 min) — script is in `DEMO-SCRIPT.md`. Sandbox credentials are in (Nov 9) and the live create → approve → capture flow is verified end to end ($480 INV-0041, order 5D7227578P490643S, capture 812073410Y427925S); the video just needs recording.
 - **Devpost description** — not yet written.
 - **Darren's Join click** on Devpost (submission closes Thu Nov 12, 2026,
   3:00 PM ET) — he is signed in to Devpost in his own Chrome.
-- **PayPal sandbox credentials** — none exist yet in this environment; the
-  live create → approve → capture flow is untested until they land.
+- **PayPal sandbox credentials** — DONE Nov 9 (Darren created the sandbox app + buyer account); live create → approve → capture verified. Keys live in `server/.env` only (gitignored).
