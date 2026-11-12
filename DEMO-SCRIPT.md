@@ -18,7 +18,7 @@ Click over to the demo page. The four steps are visible at the top:
 
 > "Thirty-four files. No folders, no labels worth trusting. One button."
 
-Click **Attach data pool**. The subject cards appear.
+Click **Add folder** and pick the `data/pool` folder — or click **Use the demo folder**. The folder name shows on the page, then the subject cards appear.
 
 > "Curator read every file and sorted it by what it's about — not the
 > filename. Invoices and payments, building repairs, client messages,
@@ -49,8 +49,8 @@ INV-0041, M. Okafor, $480, job complete Oct 28, due Nov 12.
 > "The job's done, the invoice is due. The agent pays it — for real, in
 > the PayPal sandbox."
 
-Type the sandbox payee email, click **Pay this invoice**. The order is
-created; nothing has moved yet.
+The payee email is already filled in — it is only a label on the receipt —
+so just click **Pay this invoice**. The order is created; nothing has moved yet.
 
 > "PayPal won't let an agent take money nobody approved. So approve it."
 

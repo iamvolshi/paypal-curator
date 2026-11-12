@@ -90,11 +90,36 @@ async function fetchText(path) {
 
 // --- Act 1: attach + catalog -----------------------------------------------
 
+// Shared by both ways in: the bundled demo folder and a folder the user
+// picks. Takes loaded files, catalogs them, renders Act 1, and readies
+// Acts 2 and 3. sourceLabel names the folder for the status line.
+function processLoadedFiles(files, sourceLabel) {
+  state.files = files;
+  state.filesById = {};
+  files.forEach(function (f) { state.filesById[f.id] = f; });
+  state.catalog = catalogPool(files);
+  state.facts = extractFacts(files, state.catalog);
+  state.facts.forEach(function (f) { state.factsById[f.id] = f; });
+  state.invoice = parseInvoiceFromFacts(state.facts, state.filesById);
+
+  renderSubjects(document.getElementById('subjects'), state.catalog, selectSubject);
+  renderUnfiled(document.getElementById('unfiled'), state.catalog.unfiled, state.filesById);
+  document.getElementById('act1-status').textContent = sourceLabel + ': ' +
+    state.catalog.totalFiles + ' files in. ' +
+    state.catalog.subjects.length + ' subjects, ' +
+    state.catalog.unfiled.length + ' unfiled. ' +
+    state.facts.length + ' facts, every one with a source. Click a subject.';
+  document.getElementById('act2-hint').textContent =
+    'Pool attached. Click a subject card above to see what Curator knows about it.';
+  setActiveStep(2);
+  renderInvoiceCard();
+}
+
 async function attachPool() {
   var status = document.getElementById('act1-status');
   var btn = document.getElementById('attach-btn');
   btn.disabled = true;
-  status.textContent = 'Reading the pool…';
+  status.textContent = 'Reading the demo folder…';
   try {
     var manifest = await fetchJson('data/pool/manifest.json');
     var files = [];
@@ -103,29 +128,96 @@ async function attachPool() {
       var text = await fetchText(encodeURI(meta.path));
       files.push({ id: meta.id, name: meta.name, kind: meta.kind, date: meta.date, text: text });
     }
-    state.files = files;
-    state.filesById = {};
-    files.forEach(function (f) { state.filesById[f.id] = f; });
-    state.catalog = catalogPool(files);
-    state.facts = extractFacts(files, state.catalog);
-    state.facts.forEach(function (f) { state.factsById[f.id] = f; });
-    state.invoice = parseInvoiceFromFacts(state.facts, state.filesById);
-
-    renderSubjects(document.getElementById('subjects'), state.catalog, selectSubject);
-    renderUnfiled(document.getElementById('unfiled'), state.catalog.unfiled, state.filesById);
-    status.textContent = state.catalog.totalFiles + ' files in. ' +
-      state.catalog.subjects.length + ' subjects, ' +
-      state.catalog.unfiled.length + ' unfiled. ' +
-      state.facts.length + ' facts, every one with a source. Click a subject.';
-    document.getElementById('act2-hint').textContent =
-      'Pool attached. Click a subject card above to see what Curator knows about it.';
-    setActiveStep(2);
-    renderInvoiceCard();
+    document.getElementById('folder-name').textContent = 'Folder: data/pool (demo folder, 34 files).';
+    processLoadedFiles(files, 'Demo folder');
   } catch (error) {
     status.textContent = 'Could not load the data pool: ' + error.message;
     status.classList.add('error');
     btn.disabled = false;
   }
+}
+
+// Kind for a picked file when no manifest says otherwise. Only
+// 'chat-export' changes behaviour (JSON export parsing in provenance.js);
+// everything else is sorted by content, never by kind.
+function guessKind(name, text) {
+  var lower = String(name || '').toLowerCase();
+  if (/\.json$/.test(lower)) {
+    try {
+      var parsed = JSON.parse(text || '');
+      if (parsed && (parsed.conversations || parsed.messages)) return 'chat-export';
+    } catch (error) { /* not JSON — falls through to note */ }
+    return 'note';
+  }
+  if (/^invoice/.test(lower)) return 'invoice';
+  if (/^chat/.test(lower)) return 'chat';
+  return 'note';
+}
+
+// Turn picked File objects into pool files. When the picked folder holds
+// a manifest.json (the demo folder does), its listing wins: same files,
+// same kinds, same order as the bundled path. Without one, every readable
+// text file in the folder is used. manifest.json itself is never a
+// content file. Pure apart from File.text() — Node-testable with stubs.
+async function filesFromPicked(picked) {
+  var list = Array.prototype.slice.call(picked || []);
+  var byName = {};
+  list.forEach(function (f) { byName[f.name] = f; });
+  var manifestFile = byName['manifest.json'] || null;
+  var manifest = null;
+  if (manifestFile) {
+    try { manifest = JSON.parse(await manifestFile.text()); } catch (error) { manifest = null; }
+  }
+  var files = [];
+  var seen = {};
+  function dateOf(f) {
+    if (f.lastModified) {
+      var d = new Date(f.lastModified);
+      if (!isNaN(d.getTime())) return d.toISOString().slice(0, 10);
+    }
+    return '';
+  }
+  if (manifest && Array.isArray(manifest.files)) {
+    for (var i = 0; i < manifest.files.length; i++) {
+      var meta = manifest.files[i];
+      var pickedFile = byName[meta.name];
+      if (!pickedFile) continue;
+      seen[meta.name] = true;
+      files.push({ id: meta.id, name: meta.name, kind: meta.kind, date: meta.date || dateOf(pickedFile), text: await pickedFile.text() });
+    }
+  }
+  var readable = /\.(txt|md|json|csv|log|text)$/i;
+  for (var j = 0; j < list.length; j++) {
+    var f = list[j];
+    if (seen[f.name] || f.name === 'manifest.json') continue;
+    if (!readable.test(f.name)) continue;
+    var text = await f.text();
+    files.push({ id: 'p' + String(j + 1), name: f.name, kind: guessKind(f.name, text), date: dateOf(f), text: text });
+  }
+  if (files.length === 0) throw new Error('no readable text files found in that folder');
+  return files;
+}
+
+async function attachPickedFolder(event) {
+  var input = event.target;
+  var status = document.getElementById('act1-status');
+  var btn = document.getElementById('attach-btn');
+  var picked = input.files || [];
+  if (!picked.length) return;
+  var rel = (picked[0] && picked[0].webkitRelativePath) || picked[0].name || '';
+  var folderLabel = rel.split('/')[0] || 'picked folder';
+  document.getElementById('folder-name').textContent = 'Folder: ' + folderLabel + ' (' + picked.length + ' files picked).';
+  btn.disabled = true;
+  status.textContent = 'Reading ' + folderLabel + '…';
+  try {
+    var files = await filesFromPicked(picked);
+    processLoadedFiles(files, 'Folder ' + folderLabel);
+  } catch (error) {
+    status.textContent = 'Could not read that folder: ' + error.message;
+    status.classList.add('error');
+    btn.disabled = false;
+  }
+  input.value = '';
 }
 
 // --- Act 2: retrieve ---------------------------------------------------------
@@ -289,6 +381,7 @@ async function runAudit() {
 
 function init() {
   document.getElementById('attach-btn').addEventListener('click', attachPool);
+  document.getElementById('folder-input').addEventListener('change', attachPickedFolder);
   document.getElementById('audit-btn').addEventListener('click', runAudit);
   Array.prototype.forEach.call(document.querySelectorAll('.steps a'), function (a) {
     a.addEventListener('click', function () { setActiveStep(Number(a.dataset.step)); });
@@ -306,5 +399,5 @@ if (typeof document !== 'undefined') {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { parseInvoiceFromFacts: parseInvoiceFromFacts, mergeKRecordData: mergeKRecordData };
+  module.exports = { parseInvoiceFromFacts: parseInvoiceFromFacts, mergeKRecordData: mergeKRecordData, filesFromPicked: filesFromPicked, guessKind: guessKind };
 }

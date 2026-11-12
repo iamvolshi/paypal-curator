@@ -30,7 +30,12 @@
     <h2><span class="num">1</span> SNAP ON</h2>
     <p class="plain">Curator snaps onto a messy folder and sorts it by what
       each file is actually about — never by its filename.</p>
-    <button id="attach-btn" class="btn">Attach data pool</button>
+    <p class="plain">Pick the folder, or use the demo folder that ships with
+      this page. The folder is read in your browser — nothing is uploaded.</p>
+    <label class="btn" for="folder-input">Add folder</label>
+    <input type="file" id="folder-input" webkitdirectory directory multiple hidden>
+    <button id="attach-btn" class="btn secondary">Use the demo folder (34 files)</button>
+    <p id="folder-name" class="status" role="status">No folder chosen yet. The demo folder is <code>data/pool</code> in this repo.</p>
     <p id="act1-status" class="status" role="status"></p>
     <div id="subjects" class="cards"></div>
     <div id="unfiled"></div>

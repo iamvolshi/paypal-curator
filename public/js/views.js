@@ -105,12 +105,12 @@ function renderInvoice(container, invoice, paypalState, onPay) {
     '<dt>Due</dt><dd>' + esc(invoice.due || '—') + '</dd>' +
     '<dt>Status</dt><dd>UNPAID (mock data)</dd></dl>';
   if (paypalState === 'sandbox') {
-    html += '<label for="payee-email">Payee email (PayPal needs one)</label>' +
-      '<input type="email" id="payee-email" placeholder="contractor@example.com" autocomplete="off">' +
-      '<p class="hint">The invoice names ' + esc(invoice.payee) +
-      ' but gives no email address. Type the sandbox payee email — nothing is invented here. ' +
-      'The money settles to the sandbox merchant account that owns the server credentials; ' +
-      'the email is kept on the receipt and the K-record.</p>' +
+    html += '<label for="payee-email">Payee email (pre-filled demo placeholder)</label>' +
+      '<input type="email" id="payee-email" value="contractor@example.com" placeholder="contractor@example.com" autocomplete="off">' +
+      '<p class="hint">Pre-filled — nothing to remember or type. The invoice names ' + esc(invoice.payee) +
+      ' but gives no email address, and this email is only a label on the receipt and the K-record. ' +
+      'The money settles to the sandbox merchant account that owns the server credentials. ' +
+      'Edit it if you want; you do not need to remember any address.</p>' +
       '<p><button type="button" class="btn big" id="pay-btn">Pay this invoice — ' +
       esc(money(invoice.amount)) + '</button></p>' +
       '<p class="status" id="pay-error" role="status"></p>';

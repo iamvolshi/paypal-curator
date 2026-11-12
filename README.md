@@ -10,9 +10,10 @@ notes never do.
 
 ## The four acts
 
-1. **SNAP ON** — "Attach data pool": 34 messy files (bad names, chat logs, a
-   ChatGPT export, unpaid invoices) get sorted into subjects by content, never
-   by filename. Files that fit nowhere stay unfiled — Curator never guesses.
+1. **SNAP ON** — "Add folder" (pick the `data/pool` folder, or "Use the demo
+   folder"): 34 messy files (bad names, chat logs, a ChatGPT export, unpaid
+   invoices) get sorted into subjects by content, never by filename. Files
+   that fit nowhere stay unfiled — Curator never guesses.
 2. **RETRIEVE** — click a subject: every fact comes with its source pointer
    (file name + "line N" / "message N"). Click a pointer to see the source
    excerpt. No source, no fact — it says "cannot answer from this record".
@@ -71,8 +72,10 @@ Sandbox only: the server refuses to run with anything but
   capture) via the PayPal Agent Toolkit, and the K-record entry the server
   appends to `data/krecord-live.json` after a `COMPLETED` capture.
 - **One honest gap:** the invoice names M. Okafor but gives no email address,
-  and PayPal requires one — so Act 3 asks you to type the sandbox payee
-  email instead of inventing one.
+  and the payment form requires one — so Act 3 pre-fills a demo placeholder
+  (`contractor@example.com`, editable). It is only a label on the receipt
+  and the K-record; the money settles to the sandbox merchant account that
+  owns the server credentials.
 
 ## Repo layout
 
